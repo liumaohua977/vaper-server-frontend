@@ -14,9 +14,9 @@
               type="selection"
               width="36">
             </el-table-column>
-            <el-table-column prop="identity" label="Relation" width="80px">
+            <el-table-column prop="identity" label="chart" width="80px">
               <template slot-scope="scope">
-                <router-link :to="'/chart/relation/' + scope.row.properties.uid + '/0/0/1'"><svg-icon icon-class="wang" class="links-icon"/></router-link>
+                <router-link :to="'/charts/link/' + scope.row.properties.uid + '/0/0/1'"><svg-icon icon-class="wang" class="links-icon"/></router-link>
               </template>
             </el-table-column>
             <el-table-column prop="properties.hostname" label="Hostname"></el-table-column>
@@ -147,6 +147,9 @@ export default {
       this.tagInputValue = ''
       if (this.hostInEdit.properties.tags === undefined) {
         this.hostInEdit.properties.tags = []
+      }
+      if (newTag === '') {
+        return
       }
       this.hostInEdit.properties.tags.push(newTag)
       this.updateHostTags()

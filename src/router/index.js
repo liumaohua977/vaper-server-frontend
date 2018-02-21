@@ -81,9 +81,9 @@ export const asyncRouterMap = [{
   children: [{
     path: 'list',
     component: _import('host/list'),
-    name: 'host',
+    name: 'hosts',
     meta: {
-      title: 'host',
+      title: 'hosts',
       icon: 'host',
       noCache: true
     }
@@ -91,15 +91,31 @@ export const asyncRouterMap = [{
 },
 {
   hidden: true,
-  path: '/chart',
+  path: '/charts',
   component: Layout,
-  redirect: '/chart/relation',
+  redirect: '/charts/link',
   children: [{
-    path: 'relation/:identity/:hostname/:ip/:depth',
-    component: _import('host/chart'),
-    name: 'relation',
+    path: 'link/:identity/:hostname/:ip/:depth',
+    component: _import('charts/link'),
+    name: 'charts-link',
     meta: {
-      title: 'relation',
+      title: 'chart',
+      icon: 'host',
+      noCache: true
+    }
+  }]
+},
+{
+  hidden: false,
+  path: '/link',
+  component: Layout,
+  redirect: '/link/list',
+  children: [{
+    path: 'list',
+    component: _import('link/list'),
+    name: 'link-list',
+    meta: {
+      title: 'Links',
       icon: 'host',
       noCache: true
     }

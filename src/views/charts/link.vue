@@ -8,7 +8,7 @@
     </el-col>
     <el-col :span="6">
       <el-card class="box-card" v-if="mainNode != undefined">
-        <h3>Center Point</h3>
+        <h3>Central Node</h3>
         <div class="text item">
           identity: {{mainNode.identity}}
         </div>
@@ -30,7 +30,7 @@
               <el-radio :label="3">3D</el-radio>
             </el-radio-group>
           </el-form-item>
-          <el-form-item label="Text on point" v-if="dimension==2">
+          <el-form-item label="Text on Node" v-if="dimension==2">
             <el-select v-model="pointText" placeholder="choose" @change="pointChange">
               <el-option
                 v-for="item in pointTextOptions"
@@ -44,7 +44,7 @@
       </el-card>
       <el-card class="box-card" v-if="node_hover.identity != ''">
         <div class="text item">
-          Point
+          <h3>Selected Node</h3>
         </div>
         <div class="text item">
           Id in Neo4j: {{node_hover.identity}}
@@ -222,7 +222,7 @@ export default {
       this.myGraph = echarts.init(dom)
       var option = {
         title: {
-          text: '默认节点上显示的为主机名称'
+          text: 'graph'
         },
         animationDurationUpdate: 1500,
         animationEasingUpdate: 'quinticInOut',
@@ -237,7 +237,7 @@ export default {
             label: {
               position: 'right',
               normal: {
-                fontSize: 10,
+                fontSize: 12,
                 show: true
               }
             },
