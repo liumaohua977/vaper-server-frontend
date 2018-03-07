@@ -116,11 +116,28 @@ export const asyncRouterMap = [{
     name: 'link-list',
     meta: {
       title: 'Links',
-      icon: 'host',
+      icon: 'wang',
       noCache: true
     }
   }]
 },
+{
+  hidden: false,
+  path: '/documentation',
+  component: Layout,
+  redirect: '/documentation/index',
+  children: [{
+    path: 'index',
+    component: _import('documentation/index'),
+    name: 'Documentation',
+    meta: {
+      title: 'Documentation',
+      icon: 'documentation',
+      noCache: true
+    }
+  }]
+},
+
 {
   path: '*',
   redirect: '/404',
