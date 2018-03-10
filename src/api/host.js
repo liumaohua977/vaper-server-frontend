@@ -33,7 +33,7 @@ export function getHostCount(query) {
 }
 export function getLinksCount(query) {
   return request({
-    url: '/netrelation/count',
+    url: '/netflow/count',
     method: 'get',
     data: query
   })

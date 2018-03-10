@@ -125,7 +125,7 @@ export default {
     getLinks: function(uids) {
       var self = this
       axios
-        .post('/api/netrelation/search', { uids: uids })
+        .post('/api/netflow/search', { uids: uids })
         .then(function(response) {
           var links = response.data.links
           var links_ = []
