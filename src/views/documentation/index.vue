@@ -11,8 +11,6 @@
   </el-row>
 </template>
 <script>
-import DropdownMenu from '@/components/Share/dropdownMenu'
-
 export default {
   name: 'documentation',
   data() {
